@@ -21,6 +21,7 @@ export default function TableName({ watchedField, ...props }: ITableNameProps) {
   useEffect(() => {
     if (!disabled) {
       const touched = control.getFieldState(props.name).isTouched;
+      
       if (!touched && typeof watchedValue === "string" && !!watchedValue) {
         // if table name field is not touched, and watched value is valid, set table name to watched value
         onChange(startCase(watchedValue));
